@@ -1,0 +1,6 @@
+﻿// calculates the relative font-size to the body font-size
+@function calculate-rem($size) {
+    $rem-size: $size / $font-root-size;
+
+    @return $rem-size * 1rem;
+}

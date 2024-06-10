@@ -1,0 +1,88 @@
+﻿@import "_variables.scss";
+
+// represent grid - constrains min width of grid
+.container {
+    margin: 0 auto;
+    min-width: $grid-min-width;
+}
+
+// row styles - setting overflow auto will fix collapsed height due to floating child elements
+.row {
+    overflow: auto;
+}
+
+// column styles to float the columns
+%col {
+    position: relative;
+    float: left;
+}
+
+// calculates responsive width using the formula
+@function get-responsive-width($target, $context) {
+    @return $target / $context * 100%;
+}
+
+
+//reusable padding styles(gutter) for columns 
+@mixin responsive-column($size, $breakpoint, $gutter)
+{
+    $column-width:$breakpoint / $grid-columns;
+    $column-padding: get-responsive-width($gutter,$breakpoint)/2;
+
+    $col-padding-selector: "%col-padding-#{$size}";
+
+    #{$col-padding-selector}
+    {
+        padding-left:$column-padding;
+        padding-right:$column-padding;
+    }
+
+
+
+
+    // loop through all of the columns in the grid
+    @for $i from 1 through $grid-columns{
+        .col-#{$size}-#{$i}{
+          @extend #{$col-padding-selector}
+        }
+        
+        //calculate the column span width
+        $column-span-width: $column-width * $i - $gutter;
+        
+        .col-#{$size}-#{$i}{
+          width: get-responsive-width($column-span-width, $breakpoint);
+        }
+    }
+}
+
+@mixin responsive-column-offsetting(){
+    @for $i from 1 through $grid-columns{
+        $col-offset: get-responsive-width($i, $grid-columns);
+
+        .offset-#{$i}{
+            margin-left: $col-offset;
+        }
+    }
+}
+
+//combines all the mixins above to create grid column styles
+@mixin grid($size, $breakpoint, $gutter, $is-default:false){
+    @for $i from 1 through $grid-columns{
+        .col-#{$size}-#{$i}{
+            @extend %col; 
+        }
+    }
+    @if $is-default== true{
+        @include responsive-column($size, $breakpoint, $gutter);
+    }
+    @else
+    {
+        @media(min-width:$breakpoint){
+            .container{
+                width: $breakpoint - $gutter;
+            }
+            @include responsive-column($size, $breakpoint, $gutter);
+        }
+    }
+}
+

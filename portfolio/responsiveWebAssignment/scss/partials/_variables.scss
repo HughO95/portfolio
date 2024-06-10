@@ -1,0 +1,39 @@
+﻿// colour variables
+
+$colour-black: #000;
+$colour-white: #fff;
+
+// fonts
+$font-min-size: 16px;
+$font-max-size: 24px;
+$font-root-size: $font-min-size;
+$font-family-site: 'Raleway', sans-serif;
+
+// Menu
+// Create a map variable for menu colours
+$menu-colours: (
+    li: (color:null,background-color:null, border-color:null),
+    li-hover: (color: $colour-white, background-color: $colour-black, border-color:null)
+    );
+
+// Grid
+$grid-columns: 12;
+$grid-gutter: 20px;
+$grid-min-width: 320px;
+$grid-max-width: 1200px;
+
+// Grid sizes
+$grid-size-1: xs;
+$grid-size-2: sm;
+$grid-size-3: md;
+$grid-size-4: lg;
+
+// Breakpoints
+//the breakpoints I used are standard Bootstrap 4 breakpoints
+//https://medium.com/@uiuxlab/the-most-used-responsive-breakpoints-in-2017-of-mine-9588e9bd3a8a
+
+$grid-breakpoint-1: 575px;
+$grid-breakpoint-2: 768px;
+$grid-breakpoint-3: 991px;
+$grid-breakpoint-4: $grid-max-width;
+

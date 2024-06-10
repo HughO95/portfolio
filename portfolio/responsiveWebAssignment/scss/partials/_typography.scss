@@ -1,0 +1,27 @@
+﻿@import "_variables.scss";
+@import "_shared.scss";
+@mixin responsive-typography($min-vw, $max-vw, $min-font-size, $max-font-size){
+       //check that all the units are the same first
+     $same-units: unit($min-vw) and unit($max-vw) and unit($min-font-size) and($max-font-size);
+     
+     @if ($same-units){
+         //default font size
+         font-size: $min-font-size;
+
+         @media screen and (min-width: $min-vw){
+             font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)}*((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+         }
+
+         //max
+         @media screen and (min-width:$min-vw){
+             font-size: $max-font-size;
+         }
+     }
+}
+
+%fluid-type{
+    @include responsive-typography($grid-min-width, $grid-max-width, $font-min-size, $font-max-size);
+    
+
+                                                                                                    
+}

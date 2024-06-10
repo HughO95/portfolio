@@ -1,0 +1,23 @@
+﻿// Create a reusable mixin called menu for creating nav menus
+
+@mixin menu($menu-class, $menu-id: null, $li-display-style: inline-block, $li-padding: null, $menu-colours: null) {
+    ul.#{$menu-class} {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: $li-display-style;
+            padding: $li-padding;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+            &:hover{
+                text-decoration: underline;
+                color:black;
+            }
+        }
+    }
+}
