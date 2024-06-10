@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portfolio | hugh.cymru</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <!-- Custom css and fonts -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+</head>
+
+<body onLoad="javascript:showMessage()">
+    <div class="container">
+        <!-- Start of container tag -->
+
+        <header>
+            <div id="headingContainer">
+                <h1>Hugh Owens, Web Developer</h1>
+                <div id="welcomeMessage"></div>
+            </div>
+        </header>
+
+        <p class="navLabel">Menu</p>
+        <nav>
+            <a href="#" class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </a>
+
+            <ul class="clearfix menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+        </nav>
+
+        <!-- Link to homepage with logo image -->
+        <a href="index.html">
+            <div class="roundImage"></div>
+        </a>
+        
+        <!-- Main content area -->
+        <main>
+            <h2>Portfolio</h2><br><br>
+            <h3>Some of the projects I have completed:</h3><br><br>
+
+            <!-- Portfolio projects -->
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <a href="portfolio/responsiveWebAssignment/index.html">
+                        <img src="images/RWDLinkPhoto.PNG" alt="Responsive web assignment" />
+                        <p>Responsive web assignment</p>
+                    </a>
+                </div>
+                <div class="portfolio-item">
+                    <a href="portfolio/musicPlayer/index.html">
+                        <img src="images/musicPlayer.PNG" alt="Music Player" />
+                        <p>Music Player</p>
+                    </a>
+                </div>
+                <div class="portfolio-item">
+                    <a href="portfolio/uniQuiz/index.html">
+                        <img src="images/quizPhoto.PNG" alt="Heavy Metal Quiz" />
+                        <p>Heavy Metal Quiz</p>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- End of container tag -->
+
+    <!-- Scripts for jQuery and custom JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
