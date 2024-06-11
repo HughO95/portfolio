@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,11 +10,8 @@
     <!-- Custom CSS and fonts -->
     <link rel="stylesheet" href="css/styles.css" type="text/css">
 </head>
-
 <body onLoad="javascript:showMessage()">
     <div class="container">
-        <!-- Start of container tag -->
-
         <header>
             <div id="headingContainer">
                 <h1>Hugh Owens, Web Developer</h1>
@@ -54,29 +50,31 @@
 
             <div class="card">
                 <h2>My Skills</h2>
-                <p class="text">
-                    With over 10 years of experience in web development, I possess extensive expertise in HTML and CSS,
-                    allowing me to create high-quality websites that meet industry standards.
-                    <br><br>
-                    I am proficient in JavaScript and jQuery, which enables me to implement dynamic functionality on web
-                    pages effectively.
-                    <br><br>
-                    My understanding of PHP is solid, and I have utilized it to develop applications with MySQL
-                    integration. Additionally, I have experience in building small applications using C#.
-                    <br><br>
-                    I am interested in artificial intelligence and video game development using Unity. Currently, I
-                    am actively enhancing my knowledge in these areas to expand my skill set and advance my capabilities
-                    as a developer.
-                </p>
+                <div class="text" id="skillsText">
+                    <p>
+                        With over 10 years of experience in web development, I possess extensive expertise in HTML and CSS,
+                        allowing me to create high-quality websites that meet industry standards.
+                    </p>
+                    <p>
+                        I am proficient in JavaScript and jQuery, which enables me to implement dynamic functionality on web
+                        pages effectively.
+                    </p>
+                    <p class="hidden">
+                        My understanding of PHP is solid, and I have utilized it to develop applications with MySQL
+                        integration. Additionally, I have experience in building small applications using C#.
+                    </p>
+                    <p class="hidden">
+                        I am interested in artificial intelligence and video game development using Unity. Currently, I
+                        am actively enhancing my knowledge in these areas to expand my skill set and advance my capabilities
+                        as a developer.
+                    </p>
+                </div>
+                <button id="viewMoreBtn" onclick="showMoreSkills()">Click to view more</button>
             </div>
         </main>
     </div>
-    <!-- End of container tag -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <!-- Script to add jQuery to the page -->
     <script src="js/script.js"></script>
-    <!-- Script that adds custom JS file to the page -->
 </body>
-
 </html>

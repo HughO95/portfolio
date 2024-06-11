@@ -1,231 +1,239 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-/* CSS Variables for easy maintenance */
 :root {
-  --background-color: #aad4d4; /* Light blue background for the entire page */
-  --header-bg-color: #dadada; /* Light gray background for the header */
-  --white-color: #fff; /* White color */
-  --text-color: #323232; /* Dark gray text color */
-  --hover-bg-color: #b2d8d8; /* Light blue background on hover */
-  --font-family: 'Roboto', sans-serif; /* Primary font family */
-  --primary-font-size: 1.1414em; /* Primary font size */
-  --heading-font-size: 1.5em; /* Font size for headings */
-  --card-padding: 2% 4%; /* Padding inside cards */
-  --border-radius: 6px; /* Rounded corners for cards and images */
-  --box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05); /* Light shadow for a 3D effect */
-  --main-width: 50%; /* Maximum width of main content area */
-  --main-margin: 5% auto; /* Center the main content with margin and top/bottom spacing */
-  --gap: 20px; /* Space between grid items */
-  --nav-item-width: 33%; /* Each navigation item takes up 33% width */
-  --hamburger-padding: 15px; /* Padding for the hamburger icon */
-  --line-width: 70%; /* Width of the lines in the hamburger icon */
-  --line-height: 4px; /* Height of the lines in the hamburger icon */
-  --menu-transition: height 0.2s linear; /* Smooth transition for height change in the menu */
+  --background-color: #aad4d4;
+  --header-bg-color: #dadada;
+  --white-color: #fff;
+  --text-color: #323232;
+  --hover-bg-color: #b2d8d8;
+  --font-family: 'Roboto', sans-serif;
+  --primary-font-size: 1.1414em;
+  --heading-font-size: 1.5em;
+  --card-padding: 2% 4%;
+  --border-radius: 6px;
+  --box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05);
+  --main-width: 50%;
+  --main-margin: 5% auto;
+  --gap: 20px;
+  --nav-item-width: 33%;
+  --hamburger-padding: 15px;
+  --line-width: 70%;
+  --line-height: 4px;
+  --menu-transition: height 0.2s linear;
 }
 
-/* Standard CSS reset styles to remove default browser padding and margin */
 html, body {
   margin: 0;
   padding: 0;
   font-size: 100%;
-  background-color: var(--background-color); /* Apply background color */
-  font-family: var(--font-family); /* Apply the Roboto font to all elements */
+  background-color: var(--background-color);
+  font-family: var(--font-family);
 }
 
-/* Header styles */
 header {
-  background: var(--header-bg-color); /* Light gray background for the header */
-  padding: 1%; /* Padding inside the header for spacing */
-  text-align: center; /* Center align the header text */
+  background: var(--header-bg-color);
+  padding: 1%;
+  text-align: center;
 }
 
-/* Main heading (h1) styles */
 h1 {
-  text-transform: uppercase; /* Uppercase all letters in the heading */
-  line-height: 1em; /* Line height for the heading */
+  text-transform: uppercase;
+  line-height: 1em;
 }
 
-/* Main content area styles */
 main {
-  max-width: var(--main-width); /* Maximum width of main content area */
-  margin: var(--main-margin); /* Center the main content with margin and top/bottom spacing */
-  padding: 2%; /* Padding inside the main content area */
-  display: grid; /* Use CSS Grid for layout */
-  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
-  gap: var(--gap); /* Space between grid items */
+  max-width: var(--main-width);
+  margin: var(--main-margin);
+  padding: 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
 }
 
-/* Card container styles */
 .card {
-  background: var(--white-color); /* White background for cards */
-  padding: var(--card-padding); /* Padding inside cards */
-  border-radius: var(--border-radius); /* Rounded corners for cards */
-  box-shadow: var(--box-shadow); /* Light shadow for a 3D effect */
-  margin-top: 2%; /* Top margin for spacing between cards */
-  grid-column: span 2; /* Make each card span both columns */
-  display: flex; /* Use Flexbox for card layout */
-  flex-direction: column; /* Arrange children vertically */
-  align-items: flex-start; /* Align children to the start (left) of the card */
+  background: var(--white-color);
+  padding: var(--card-padding);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-top: 2%;
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* Styles for h2 inside card */
 .card h2 {
-  text-align: center; /* Center align the card heading */
-  font-size: var(--heading-font-size); /* Font size for card heading */
-  padding: 10px 0; /* Top and bottom padding for card heading */
-  margin: 0; /* Remove default margin */
-  width: 100%; /* Full width for the card heading */
+  text-align: center;
+  font-size: var(--heading-font-size);
+  padding: 10px 0;
+  margin: 0;
+  width: 100%;
 }
 
-/* Text inside card styles */
 .card .text {
-  color: var(--text-color); /* Dark gray text color */
-  font-size: var(--primary-font-size); /* Font size for text inside cards */
-  max-width: 85%; /* Maximum width for the text */
+  color: var(--text-color);
+  font-size: var(--primary-font-size);
+  max-width: 85%;
 }
 
-/* Portfolio grid styles */
+.hidden {
+  display: none;
+}
+
+#viewMoreBtn {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: var(--header-bg-color);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); /* Responsive grid columns */
-  gap: 2%; /* Space between grid items */
+  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+  gap: 2%;
 }
 
 .portfolio-item {
-  background: var(--white-color); /* White background for portfolio items */
-  padding: 5%; /* Padding inside portfolio items */
-  border-radius: var(--border-radius); /* Rounded corners for portfolio items */
-  box-shadow: var(--box-shadow); /* Light shadow for a 3D effect */
-  text-align: center; /* Center align the text inside portfolio items */
+  background: var(--white-color);
+  padding: 5%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
 }
 
 .portfolio-item img {
-  width: 100%; /* Full width for images */
-  height: auto; /* Auto height for images to maintain aspect ratio */
-  border-radius: var(--border-radius); /* Rounded corners for images */
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
 }
 
 .portfolio-item p {
-  margin-top: 5%; /* Top margin for spacing */
-  font-size: 1.2em; /* Font size for paragraph text */
-  color: var(--text-color); /* Dark gray text color */
+  margin-top: 5%;
+  font-size: 1.2em;
+  color: var(--text-color);
 }
 
-/* Round image styles */
 .roundImage {
-  width: 200px; /* Width of the round image */
-  height: 200px; /* Height of the round image */
-  background-image: url("../images/logo2.png"); /* Background image for the round image */
-  background-size: cover; /* Cover the entire area with the image */
-  display: block; /* Block display for proper alignment */
-  border-radius: 50%; /* Full rounding for a circular shape */
-  margin: 0 auto; /* Center the round image */
+  width: 200px;
+  height: 200px;
+  background-image: url("../images/logo2.png");
+  background-size: cover;
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto;
 }
 
-/* Global styles for all elements */
-*,
-*:before,
-*:after {
+*, *:before, *:after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Use border-box sizing model */
+  box-sizing: border-box;
 }
 
-/* Clearfix for floating elements */
 .clearfix:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* List styles for navigation menu */
 ul {
-  list-style: none; /* Remove default list styles */
-  max-width: 100%; /* Maximum width for the list */
-  margin: 0 auto; /* Center the list */
+  list-style: none;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
-/* Anchor styles for navigation links */
 ul a {
-  display: block; /* Block display for full clickable area */
-  padding: 20px; /* Padding inside links */
-  font-size: var(--primary-font-size); /* Font size for links */
-  text-align: center; /* Center align the text */
-  cursor: pointer; /* Pointer cursor on hover */
-  text-decoration: none; /* Remove underline from links */
+  display: block;
+  padding: 20px;
+  font-size: var(--primary-font-size);
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 ul a:hover {
-  background: var(--hover-bg-color); /* Light blue background on hover */
-  color: #000; /* Black text color on hover */
+  background: var(--hover-bg-color);
+  color: #000;
 }
 
-/* Navigation list item styles */
 nav li {
-  float: left; /* Float list items to the left */
-  width: var(--nav-item-width); /* Each item takes up 33% width */
+  float: left;
+  width: var(--nav-item-width);
 }
 
-/* Remove border and center the last item */
 nav li:last-child {
-  border-right: none; /* Remove right border */
-  margin: 0 auto; /* Center the last item */
+  border-right: none;
+  margin: 0 auto;
 }
 
-/* Media queries for responsive design */
+.navLabel {
+  visibility: hidden;
+  text-align: center;
+  margin-top: 10px;
+}
 
-/* Styles for screens with max width of 768px */
 @media only screen and (max-width: 768px) {
   main {
-    max-width: 90%; /* Adjust main content width for smaller screens */
+    max-width: 90%;
   }
 
   .card {
-    grid-column: span 2; /* Span both columns on smaller screens */
+    grid-column: span 2;
   }
 
   .hamburger {
-    padding: var(--hamburger-padding); /* Padding for the hamburger icon */
-    display: block; /* Display the hamburger icon */
-    margin-left: 2%; /* Left margin for positioning */
-    clear: both; /* Clear floats */
+    padding: var(--hamburger-padding);
+    display: block;
+    margin-left: 2%;
+    clear: both;
   }
 
   .line {
-    border-bottom: var(--line-height) solid #000; /* Thick line for the hamburger icon */
-    width: var(--line-width); /* Width of the lines */
-    margin-bottom: 6%; /* Space between lines */
+    border-bottom: var(--line-height) solid #000;
+    width: var(--line-width);
+    margin-bottom: 6%;
   }
 
   .line:last-child {
-    margin-bottom: 0; /* Remove bottom margin from the last line */
+    margin-bottom: 0;
   }
 
   nav li {
-    width: 100%; /* Full width for navigation items on smaller screens */
+    width: 100%;
   }
 
   .menu {
-    height: 0; /* Hide the menu by default */
-    overflow: hidden; /* Hide overflowing content */
-    transition: var(--menu-transition); /* Smooth transition for height change */
+    height: 0;
+    overflow: hidden;
+    transition: var(--menu-transition);
   }
 
   .slide-down {
-    height: 350px; /* Height for the expanded menu */
+    height: 350px;
   }
 
   .navLabel {
-    visibility: visible; /* Show nav label */
-    font-family: 'Corben', cursive; /* Use Corben font for nav label */
-    font-size: 1.414em; /* Font size for nav label */
-    padding-bottom: 1%; /* Bottom padding for spacing */
+    visibility: visible;
   }
 }
 
-/* Hide nav label on larger screens */
-@media only screen and (min-width: 769px) {
-  .navLabel {
-    visibility: hidden; /* Hide nav label by default */
+@media only screen and (max-width: 477px), only screen and (min-width: 500px) and (max-width: 750px) {
+  .card .text p.hidden {
+    display: none;
+  }
+
+  #viewMoreBtn {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 751px) {
+  main {
+    grid-template-columns: 1fr 4fr 2fr 4fr 1fr;
+  }
+
+  .card {
+    grid-column: span 4;
   }
 }
